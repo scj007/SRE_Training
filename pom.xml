@@ -14,9 +14,6 @@
 	<name>springbootproject</name>
 	<description>Just For Learning Purposes</description>
 	<properties>
-		<java.version>11</java.version>
-	</properties>
-	<properties>
     	<maven.compiler.source>11</maven.compiler.source>
     	<maven.compiler.target>11</maven.compiler.target>
 	</properties>
