@@ -34,13 +34,13 @@ pipeline {
     }
     stage("Push Image to Docker Hub"){
       steps{
-         withCredentials([string(credentialsId: 'DOCKER_HUB_CREDENTIALS', variable: 'PASSWORD')]){
+        
             sh 'docker login -u ${dockeruser} -p ${dockerpass}'
            sh 'docker push ${dockeruser}/spring-boot-java-web-service:$BUILD_NUMBER'
            sh 'docker image rm spring-boot-image:latest'
            sh 'docker image rm ${dockeruser}/spring-boot-java-web-service:latest'
            sh 'docker image rm ${dockeruser}/spring-boot-java-web-service:$BUILD_NUMBER'
-         }
+         
       }
     }
     stage('Deploying Application in "Development" Environment'){
